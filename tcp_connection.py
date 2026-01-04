@@ -19,12 +19,12 @@ for port in port_list:
         server_adress = (host, port)
 
         # Connect to the server
+        client_socket.settimeout(1)
         client_socket.connect(server_adress)
-        print(f"[+] {port} open")
-        time.sleep(1)
+        print(f"[+] {port} open {client_socket.recv(1024)}\n")
 
     except:
-        print(f"[-] {port} close or filter")
+        print(f"[-] {port} close or filter\n")
     
     finally:
         client_socket.close()
