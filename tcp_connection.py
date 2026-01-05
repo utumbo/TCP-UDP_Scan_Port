@@ -21,7 +21,7 @@ for port in port_list:
         # Connect to the server
         client_socket.settimeout(1)
         client_socket.connect(server_adress)
-        print(f"[+] {port} open {client_socket.recv(1024)}\n")
+        print(f"[+] {port} open {client_socket.recv(1024).decode()}\n")
 
     except:
         print(f"[-] {port} close or filter\n")
